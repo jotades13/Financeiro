@@ -1,0 +1,2 @@
+insert into tb_grupos(grp_descricao,grp_operacao,grp_usuario) values('Despesas Diversas','DESPESA','sistema');
+insert into tb_grupos(grp_descricao,grp_operacao,grp_usuario) values('Receitas Diversas','RECEITA','sistema');

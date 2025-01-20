@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    height: 0;
+    background-color : powderblue;
+}
+
+/*
+
+     */
+
+.crm
+position: relative
+display: inline-block
+margin-top: 10px
+border: 1px solid red
+padding: 10px
+*/
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    position: relative;
+}
+caption{
+    font-family: Arial;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+th{
+  background-color: white;
+}
+
+tr, th, td{
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle; 
+}
+
+td{
+  height: 25px;
+}
+
+td.valor{
+  text-align: right;
+  color: blue;
+}
+    
+tbody > tr:nth-child(odd){
+  background-color: #eee;
+}
+
+tbody > tr:nth-child(even){
+  background-color: white;
+}
+
+thead > tr > th{
+  position: sticky;
+  top: -1px;
+  background-color: #4682b4;
+}

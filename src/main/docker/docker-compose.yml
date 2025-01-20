@@ -1,0 +1,41 @@
+version: '3'
+
+networks:
+  rede_financeiro:
+
+volumes:
+  dados-db:
+
+services: 
+  app:
+    build:
+      context: .
+    image: jotahemmysilva/financeiroapi:latest
+    container_name: financeiroapi
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://banco:5432/financeirosinmedrn
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=root
+      # - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    networks:
+      - rede_financeiro
+    ports:
+      - 8080:8080
+    depends_on:
+      - banco 
+
+  banco:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'root'
+      POSTGRES_DB: 'financeirosinmedrn'
+    ports:
+      - "5432:5432"
+    networks:
+      - rede_financeiro  
+    volumes:
+      - dados-db:/var/lib/postgresql/data
+
+          
