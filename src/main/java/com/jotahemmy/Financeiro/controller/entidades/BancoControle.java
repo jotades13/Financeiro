@@ -1,5 +1,6 @@
 package com.jotahemmy.Financeiro.controller.entidades;
  
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import com.jotahemmy.Financeiro.service.entidades.BancoService;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.util.List;
+
 
 //@CrossOrigin("*")
 @RestController
@@ -59,10 +61,32 @@ public class BancoControle {
         repository.deleteById(codigo);
     }
 
-    @PutMapping("/{codigo}") 
-    public ResponseEntity<Banco> atualizar(@PathVariable Long codigo , @RequestBody Banco banco) {
-        Banco bancoSalva = service.atualizar(codigo, banco);
-        return ResponseEntity.ok(bancoSalva);                                                    
+  //  @PutMapping("/{codigo}") 
+  //  public ResponseEntity<Banco> atualizar(@PathVariable Long codigo , @RequestBody Banco banco) {
+  //      Banco bancoSalva = service.atualizar(codigo, banco);
+  //      return ResponseEntity.ok(bancoSalva);                                                    
+  //  }
+
+    @PutMapping("/{codigo}")
+    public ResponseEntity<Banco> atualizar2(@PathVariable Long codigo, @RequestBody Banco bancoAtualizado) {
+        
+        if(!repository.existsById(codigo)){return ResponseEntity.notFound().build();}
+        
+        bancoAtualizado.setCodigo(codigo);
+        Banco bancoSalvo = repository.save(bancoAtualizado);
+        return ResponseEntity.ok(bancoSalvo);
     }
+
+///	@PutMapping("/{pCodigo}")
+//	@Transactional
+//	public ResponseEntity<Banco> atualizar(@PathVariable String pCodigo,
+//			@RequestBody Banco bancoAtualizado) {
+//		if (!bancoRepository.existsById(pCodigo)) {
+//			return ResponseEntity.notFound().build();
+//		}
+//		bancoAtualizado.setBanco(pCodigo);
+//		Banco bancoSalvo = bancoRepository.save(bancoAtualizado);
+//		return ResponseEntity.ok(bancoSalvo);
+//	}
 
 }
