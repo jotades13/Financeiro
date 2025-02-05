@@ -30,10 +30,10 @@ public class LogService {
     
     predicates.add(builder.equal(root.get("modulo"),_modulo.trim().toUpperCase()));
     predicates.add(builder.equal(root.get("chave"),_id));
-    if(_id != null){
-    }else{
-      predicates.add(builder.equal(root.get("chave"),"2")); 
-    }
+    
+   // if(_id != null){
+   //   predicates.add(builder.equal(root.get("chave"),"2")); 
+   // }
    
     criteriaQuery.where(predicates.toArray(new Predicate[0]));
     criteriaQuery.orderBy(builder.desc(root.get("sequencia")));

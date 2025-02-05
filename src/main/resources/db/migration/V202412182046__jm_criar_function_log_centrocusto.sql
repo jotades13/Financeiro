@@ -22,7 +22,7 @@ begin
    detalhamento = 'ATIVO alterado; Vrl.Anterior: '||old.ccu_ativo;
    if new.ccu_ativo<>old.ccu_ativo then
       INSERT INTO tb_log(log_modulo, log_detalhamento, log_usuario, log_chave, log_lancamento)
-      VALUES(modulo,detalhamento,usuario,chave,now());
+      VALUES(modulo,usuario||': '||detalhamento,chave,now());
     end if;	
 
   RETURN NEW;
