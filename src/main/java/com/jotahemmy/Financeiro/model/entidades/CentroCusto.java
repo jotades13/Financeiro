@@ -20,8 +20,8 @@ public class CentroCusto {
   private Long codigo;
   @Column(name="ccu_descricao")
   private String descricao;
-  @Column(name="ccu_ativo")
-  private Boolean ativo;
+  @Column(name="ccu_desativado")
+  private Boolean desativado;
   @Column(name="ccu_usuario")
   private String usuario;
 }

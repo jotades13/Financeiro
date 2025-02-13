@@ -19,8 +19,8 @@ begin
       VALUES(modulo,usuario||': '||detalhamento,chave,now());
     end if;	
    
-   detalhamento = 'ATIVO alterado; Vrl.Anterior: '||old.ccu_ativo;
-   if new.ccu_ativo<>old.ccu_ativo then
+   detalhamento = 'DESATIVADO alterado; Vrl.Anterior: '||old.ccu_desativado;
+   if new.ccu_desativado<>old.ccu_desativado then
       INSERT INTO tb_log(log_modulo, log_detalhamento, log_usuario, log_chave, log_lancamento)
       VALUES(modulo,usuario||': '||detalhamento,chave,now());
     end if;	

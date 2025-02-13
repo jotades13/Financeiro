@@ -54,8 +54,8 @@ public class CentroCustoService {
     var predicates = new ArrayList<Predicate>();
     
     predicates.add(builder.like(root.get("descricao"), "%"+_chave
-        .trim()
-        .toUpperCase()+"%"));
+        .trim()+"%"));
+        //.toUpperCase()+"%"));
     
     criteriaQuery.where(predicates.toArray(new Predicate[0]));
     TypedQuery<CentroCusto> psq = manager.createQuery(criteriaQuery);

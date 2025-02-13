@@ -1,5 +1,5 @@
 
-insert into tb_centrocusto (ccu_descricao,ccu_ativo,ccu_usuario)
+insert into tb_centrocusto (ccu_descricao,ccu_desativado,ccu_usuario)
     values
-('SINMEDRN',true,'jotahemmy'),
-('COOPBRASIL',true,'jotahemmy');
+('SINMEDRN',false,'jotahemmy'),
+('COOPBRASIL',false,'jotahemmy');
