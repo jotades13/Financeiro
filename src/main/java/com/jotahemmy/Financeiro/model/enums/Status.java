@@ -2,16 +2,13 @@ package com.jotahemmy.Financeiro.model.enums;
 
 public enum Status {
 
-    AVENCER, CANCELADO, BAIXADO, LANCADOS;
+    CANCELADO, BAIXADO, LANCADOS;
 
     public static Status buscarPorString(String valor) {
 
         valor = valor.toUpperCase();
 
         switch(valor) {
-
-            case "AVENCER":
-                return Status.AVENCER;
             case "CANCELADO":
                 return Status.CANCELADO;
             case "BAIXADO":

@@ -17,6 +17,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -60,13 +62,15 @@ public class Lancamentos {
   @Enumerated(EnumType.STRING)
   @Column(name="lan_tipodocumento")
   private TipoDocumento tipoDocumento;
+ 
+  @ManyToOne
+  @JoinColumn(name="grp_codigo")
+  private Grupo grupo;
 
-  @Column(name="grp_codigo")
-  private Long grupoCodigo;
+  @ManyToOne
+  @JoinColumn(name="ccu_codigo")
+  private CentroCusto centroCusto;
 
-  @Column(name="ccu_codigo")
-  private Long centroCusto;
-  
   @Column(name="lan_bxdata")
   //@JsonFormat(pattern = "dd/MM/yyyy")
   private LocalDate dataBaixa;

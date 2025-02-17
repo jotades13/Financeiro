@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import com.jotahemmy.Financeiro.model.embeddable.UsuarioCadastroAlteracao;
+import com.jotahemmy.Financeiro.model.entidades.CentroCusto;
+import com.jotahemmy.Financeiro.model.entidades.Grupo;
 import com.jotahemmy.Financeiro.model.entidades.Lancamentos;
 import com.jotahemmy.Financeiro.model.enums.Contas;
 import com.jotahemmy.Financeiro.model.enums.FormaPagamento;
@@ -22,8 +24,8 @@ public class LancamentoDto {
   private LocalDate vencimento;
   private String observacao;
   private TipoDocumento tipoDocumento;
-  private Long grupoCodigo;
-  private Long centroCusto;
+  private Grupo grupo;
+  private CentroCusto centroCusto;
   private LocalDate dataBaixa;
   private String usuarioBaixa;
   private BigDecimal valorBaixa;
@@ -41,7 +43,7 @@ public class LancamentoDto {
     vencimento = l.getVencimento();
     observacao = l.getObservacao();
     tipoDocumento = l.getTipoDocumento();
-    grupoCodigo = l.getGrupoCodigo();
+    grupo = l.getGrupo();
     centroCusto = l.getCentroCusto();
     dataBaixa = l.getDataBaixa();
     usuarioBaixa = l.getUsuarioBaixa();
