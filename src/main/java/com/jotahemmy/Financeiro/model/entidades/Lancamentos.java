@@ -35,6 +35,9 @@ public class Lancamentos {
   @Column(name="lan_titulo")
   private Long titulo;
   
+  @Column(name="lan_documento")
+  private String documento;
+  
   @Column(name="lan_descricao")
   private String descricao;
   

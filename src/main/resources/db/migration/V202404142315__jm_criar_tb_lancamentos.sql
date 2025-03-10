@@ -3,6 +3,7 @@ create sequence lan_id_seq
 
 create table tb_lancamentos (
     lan_titulo          bigint not null default nextval('lan_id_seq'),
+    lan_documento       varchar(45),
     lan_descricao       varchar(50),
     lan_contas          char(7) not null,
     lan_status          char(9) not null default 'EM_ABERTO',

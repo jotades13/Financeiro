@@ -32,11 +32,9 @@ public class LancamentoController {
   @Autowired
   private ApplicationEventPublisher publisher;
 
-  //Integer _ano,Integer _mes,Integer _despesaFixa,String _descricao,
-  //String _contasPR, String _status, String _vencimentoi, String _vencimentof
   @GetMapping
-  public List<LancamentoDto> listar(@RequestParam Long ccusto, Contas contas, Status status, Long ano, Long mes){ //}, List<String> despesafixa) {
-    List<LancamentoDto> lancamentos = service.buscaLancamentos(ccusto, contas, status, ano, mes);
+  public List<LancamentoDto> listarDto(@RequestParam Integer ccusto, Contas contas, Status status, Integer ano, Integer mes, Integer lancadoshadias, String descricao){ 
+    List<LancamentoDto> lancamentos = service.listaLancamentos(ccusto, contas, status, ano, mes, lancadoshadias, descricao);
     if(lancamentos==null){
       return null;
     }else{
