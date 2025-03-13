@@ -109,12 +109,11 @@ public class LancamentoService {
     predicates.add(builder.equal(root.get("contas"), _contas));
     predicates.add(builder.equal(root.get("status"), _status));
     
-
     
     if(_lancadosdias>0){
-      LocalDate hojeDate = LocalDate.now();
-      LocalDate passadoDate = hojeDate.minusDays(_lancadosdias);
-      predicates.add(builder.between(root.get("usuarioCadastroAlteracao").get("dataCadastro"), passadoDate, hojeDate));
+      LocalDate segundaData = LocalDate.now(); 
+      LocalDate primeiraData  = segundaData.minusDays(_lancadosdias);  // Trata-se da data  menor
+      predicates.add(builder.between(root.get("usuarioCadastroAlteracao").get("dataCadastro"),primeiraData, segundaData));
     }else{
       if(_ano>0){
         Expression<Integer> anoPesquisa = null;
@@ -145,7 +144,4 @@ public class LancamentoService {
                .collect(Collectors.toList());
       
   }  
-
-  
-
 }
