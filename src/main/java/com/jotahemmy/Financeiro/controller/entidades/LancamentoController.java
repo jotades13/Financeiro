@@ -33,8 +33,8 @@ public class LancamentoController {
   private ApplicationEventPublisher publisher;
 
   @GetMapping
-  public List<LancamentoDto> listarDto(@RequestParam Integer ccusto, Contas contas, Status status, Integer ano, Integer mes, Integer lancadoshadias, String descricao){ 
-    List<LancamentoDto> lancamentos = service.listaLancamentos(ccusto, contas, status, ano, mes, lancadoshadias, descricao);
+  public List<LancamentoDto> listarDto(@RequestParam Integer ccusto, Contas contas, Status status, Integer ano, Integer mes, Integer lancadoshadias, String descricao,Boolean dspFixa){ 
+    List<LancamentoDto> lancamentos = service.listaLancamentos(ccusto, contas, status, ano, mes, lancadoshadias, descricao, dspFixa);
     if(lancamentos==null){
       return null;
     }else{
