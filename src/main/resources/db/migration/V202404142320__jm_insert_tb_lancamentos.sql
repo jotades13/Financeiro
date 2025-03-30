@@ -1,9 +1,25 @@
 insert into tb_lancamentos
 ( lan_documento,
   lan_descricao,lan_contas,lan_status,lan_despesafixa,lan_valor,lan_vencimento,
-  lan_tipodocumento,grp_codigo,ccu_codigo,lan_bxdata,
-  usu_data_cadastro,usu_cadastro
-)
+  lan_tipodocumento,grp_codigo,ccu_codigo,
+  lan_bxdata,lan_bxusu,lan_bxvalor,lan_bxbanco,lan_bxforma,
+  usu_data_cadastro,usu_cadastro)
 values
-('123','CAERN 01','PAGAR','EMABERTO',false,1200,'02/02/2024','BOLETO',1,1,null,'01/01/2024','JOTAHEMMY'),
-('1011','CAERN 02','PAGAR','EMABERTO',false,460,'02/02/2024','BOLETO',1,1,null,'01/01/2024','JOTAHEMMY')
+('123','CAERN 01','PAGAR','EMABERTO',false,1200.00,'02/02/2024','BOLETO',1,1,null,null,null,null,null,'01/01/2024','JOTAHEMMY'),
+('1011','CAERN 02','PAGAR','EMABERTO',false,460.00,'02/02/2024','BOLETO',1,1,null,null,null,null,null,'01/01/2024','JOTAHEMMY'),
+('6675','Folha de Pessoal e Ferias','PAGAR','BAIXADO',true,20611.00,'02/28/2025','BOLETO',1,1,'02/28/2025','jotahemmy',20611.80,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY'),
+('5554','Ajuda Custo - Faculdade Yasmym','PAGAR','BAIXADO',true,173.24,'02/28/2025','BOLETO',1,1,'02/28/2025','jotahemmy',173.24,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY'),
+('1643','Estagiário do Jurídico +VT - Ulisses','PAGAR','BAIXADO',true,900.00,'02/28/2025','BOLETO',1,1,'02/28/2025','jotahemmy',900.00,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY'),
+('4459','Estagiário Informática - Raul','PAGAR','BAIXADO',true,900.00,'02/28/2025','BOLETO',1,1,'02/28/2025','jotahemmy',900.00,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY'),
+('4511','Estado','RECEBER','BAIXADO',true,141186.41,'02/28/2025','NOTAFISCAL',1,1,'02/28/2025','jotahemmy',141186.41,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY'),
+('44367','Municipio - Mensalidades','RECEBER','BAIXADO',true,26201.80,'02/28/2025','NOTAFISCAL',1,1,'02/28/2025','jotahemmy',26202.80,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY'),
+('77611','Municipio - Taxa Assistencial','RECEBER','BAIXADO',true,22765.00,'02/28/2025','NOTAFISCAL',1,1,'02/28/2025','jotahemmy',22765.00,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY'),
+('48977','Internet Mossoró','RECEBER','BAIXADO',true,89.00,'02/28/2025','NOTAFISCAL',1,3,'02/28/2025','jotahemmy',89.00,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY'),
+('48979','Cosern','RECEBER','BAIXADO',true,115.38,'02/28/2025','NOTAFISCAL',1,3,'02/28/2025','jotahemmy',115.38,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY'),
+('48980','Caern Mossoró','RECEBER','BAIXADO',true,91.36,'02/28/2025','NOTAFISCAL',1,3,'02/28/2025','jotahemmy',91.36,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY'),
+('48981','Aluguel e TX Cond. Mossoró','RECEBER','BAIXADO',true,728.61,'02/28/2025','NOTAFISCAL',1,3,'02/28/2025','jotahemmy',728.61,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY'),
+('32481','Aplicação SICREDI - 03/02/2025','RECEBER','BAIXADO',true,80000.00,'02/03/2025','NOTAFISCAL',5,1,'02/03/2025','jotahemmy',80000.00,'748','TRANSFERENCIA','02/03/2025','JOTAHEMMY'),
+('32482','Aplicação SICREDI - 12/02/2025','RECEBER','BAIXADO',true,100000.00,'02/12/2025','NOTAFISCAL',5,1,'02/12/2025','jotahemmy',100000.00,'748','TRANSFERENCIA','02/12/2025','JOTAHEMMY'),
+('32483','Aplicação SICREDI - 14/02/2025','RECEBER','BAIXADO',true,40000.00,'02/14/2025','NOTAFISCAL',5,1,'02/14/2025','jotahemmy',40000.00,'748','TRANSFERENCIA','02/14/2025','JOTAHEMMY'),
+('43324','Resgate Aplicação SICREDI - 25/02/2025','RECEBER','BAIXADO',true,60000.00,'02/25/2025','NOTAFISCAL',6,1,'02/25/2025','jotahemmy',60000.00,'748','TRANSFERENCIA','02/25/2025','JOTAHEMMY'),
+('43324','Resgate Aplicação SICREDI - 28/02/2025','RECEBER','BAIXADO',true,36000.00,'02/28/2025','NOTAFISCAL',6,1,'02/28/2025','jotahemmy',36000.00,'748','TRANSFERENCIA','02/28/2025','JOTAHEMMY');

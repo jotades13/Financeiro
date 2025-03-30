@@ -132,10 +132,8 @@ public class LancamentoService {
       predicates.add(builder.like(builder.upper(root.get("descricao")), "%"+_descricao.toUpperCase()+"%"));
     }
 
-    if (_dspFixa){
-      predicates.add(builder.equal(root.get("despesaFixa"),_dspFixa));
-    }
-
+    predicates.add(builder.equal(root.get("despesaFixa"),_dspFixa));
+    
     criteriaQuery.where(predicates.toArray(new Predicate[0]));
 
     TypedQuery<Lancamentos> psq = manager.createQuery(criteriaQuery);
