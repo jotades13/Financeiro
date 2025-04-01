@@ -23,5 +23,7 @@ create table tb_lancamentos (
     usu_cadastro        varchar(15),
     usu_data_alteracao  date,
     usu_alteracao       varchar(15),
+    foreign KEY (grp_codigo) references tb_grupos (grp_codigo) ON DELETE SET NULL,
+    foreign key (ccu_codigo) references tb_centrocusto (ccu_codigo) ON DELETE SET NULL,
     primary key (lan_titulo)
 );

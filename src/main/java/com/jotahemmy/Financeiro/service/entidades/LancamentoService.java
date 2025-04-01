@@ -94,7 +94,7 @@ public class LancamentoService {
     repository.desfazBaixa("XXX","EMABERTO",titulo);
   }
 
-  public List<LancamentoDto> listaLancamentos(Integer _ccusto, Contas _contas, Status _status, Integer _ano, Integer _mes, Integer _lancadosdias, String _descricao, Boolean _dspFixa){
+  public List<LancamentoDto> listaLancamentos(Integer _ccusto, Contas _contas, Status _status, Integer _ano, Integer _mes, Integer _lancadosdias, String _descricao, Boolean _dspFixa, Integer _grupo){
 
     CriteriaBuilder builder = manager.getCriteriaBuilder();
     CriteriaQuery<Lancamentos> criteriaQuery = builder.createQuery(Lancamentos.class);
@@ -105,8 +105,13 @@ public class LancamentoService {
     if(_ccusto>0){
       predicates.add(builder.equal(root.get("centroCusto").get("codigo"), _ccusto));
     }
+    if(_grupo>0){
+      predicates.add(builder.equal(root.get("grupo").get("codigo"),_grupo));
+    }
+    
     predicates.add(builder.equal(root.get("contas"), _contas));
     predicates.add(builder.equal(root.get("status"), _status));
+    predicates.add(builder.equal(root.get("despesaFixa"),_dspFixa));
     
     if(_lancadosdias>0){
       LocalDate segundaData = LocalDate.now(); 
@@ -132,10 +137,7 @@ public class LancamentoService {
       predicates.add(builder.like(builder.upper(root.get("descricao")), "%"+_descricao.toUpperCase()+"%"));
     }
 
-    predicates.add(builder.equal(root.get("despesaFixa"),_dspFixa));
-    
     criteriaQuery.where(predicates.toArray(new Predicate[0]));
-
     TypedQuery<Lancamentos> psq = manager.createQuery(criteriaQuery);
 
     return psq.getResultList()
