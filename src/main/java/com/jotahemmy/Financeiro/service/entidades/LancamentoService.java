@@ -37,6 +37,7 @@ import jakarta.persistence.criteria.Root;
 public class LancamentoService {
   @Autowired
   private LancamentoRepository repository;
+  
   @PersistenceContext
   private EntityManager manager;
 

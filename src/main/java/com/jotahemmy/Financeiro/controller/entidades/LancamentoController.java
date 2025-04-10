@@ -69,7 +69,7 @@ public class LancamentoController {
   @PutMapping("/{titulo}") 
   public ResponseEntity<Lancamentos> atualizar(@PathVariable Long titulo , @RequestBody Lancamentos lancamento) {
       Lancamentos lancamentoSalvo = service.atualizar(titulo, lancamento);
-    return ResponseEntity.ok(lancamentoSalvo);                                                    
+    return ResponseEntity.ok(lancamentoSalvo);                                              
   }
 
   @PutMapping("/desfazbaixa")
